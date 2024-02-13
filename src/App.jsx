@@ -14,6 +14,8 @@ function App() {
 
   const dropDownList = Object.keys(currencyInfo);
 
+  
+
 
   const swapInputs = ()=>{
     setTo(from)
@@ -52,7 +54,8 @@ function App() {
           <InputBox
             amount={amount}
             onAmountChange={(amount)=>(setAmount(amount))}
-            currencyDropDown={dropDownList}
+            // currencyDropDown={dropDownList}
+            currencyDropDown={['usd', 'inr', 'pkd']}
             selectedCurrency={from}
             onCurrencyChange={(currency)=>(setFrom(currency))}
           />

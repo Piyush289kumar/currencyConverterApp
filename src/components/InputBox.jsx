@@ -2,7 +2,7 @@ import React, { useId } from 'react'
 
 function InputBox(
     classNameEtc = '',
-    amount = 0,
+    amount,
     onAmountChange,
     onCurrencyChange,
     currencyDropDown = [],
@@ -10,6 +10,7 @@ function InputBox(
     amountDisable = false,
     currencyDisable = false
 ) {
+console.log(currencyDropDown);
 
     /* useId Hook For Generate Random Keys */
     const keys = useId();
@@ -29,8 +30,7 @@ function InputBox(
             <input
             type="number"
             placeholder='Amount'
-            className={`bg-[#faeff3] text-xl text-[#fa6768] text-right border-2 border-[#fa676725] rounded-lg py-3 ${classNameEtc}`}
-            
+            className={`bg-[#faeff3] text-xl text-[#fa6768] text-right border-2 border-[#fa676725] rounded-lg py-3 ${classNameEtc}`}            
             disabled={amountDisable}
             value={amount}
             onChange={(e)=>(onAmountChange && onAmountChange(Number(e.target.value)))}
